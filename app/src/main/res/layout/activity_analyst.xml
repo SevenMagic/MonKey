@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_content_an"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <LinearLayout
+        android:id="@+id/setappbar_an"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar_an"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:layout_scrollFlags="scroll|enterAlways"
+            />
+
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:background="?attr/colorPrimary"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark">
+
+            <TextView
+                android:textSize="18sp"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:text="分析结果在这里！"
+                android:gravity="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+
+                />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="95dp"
+        >
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="5dp"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="25dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="目前已经支出了 200 元了"
+                    android:layout_marginLeft="70dp"
+
+                    android:textSize="15sp"
+                    android:id="@+id/outText"/>
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="15dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="目前总共收入项为 200 元了"
+
+                    android:layout_marginLeft="70dp"
+                    android:textSize="15sp"
+                    android:id="@+id/inText"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:text="瞧瞧支出种类吧~~"
+                android:layout_marginTop="30dp"
+                android:textSize="18sp"
+                android:id="@+id/viText2"/>
+
+
+            <LinearLayout android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="15dp"
+                android:id="@+id/viLayout3"
+                >
+
+                <com.echo.holographlibrary.PieGraph
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginTop="15dp"
+                    android:id="@+id/pieGraph"
+
+                    />
+
+
+                <LinearLayout android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="50dp"
+                    >
+
+
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="日常"
+
+                        android:background="#FF0000"
+                        />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="娱乐"
+                        android:layout_marginTop="10dp"
+                        android:background="#FFBB33"
+                        />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="旅游"
+                        android:layout_marginTop="10dp"
+                        android:background="#AA66CC"
+                        />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="学习"
+                        android:layout_marginTop="10dp"
+                        android:background="#00FF00"
+                        />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="意外"
+                        android:layout_marginTop="10dp"
+                        android:background="#0000FF"
+                        />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:text="看看你够了没？？"
+                android:layout_marginTop="60dp"
+                android:textSize="18sp"
+                android:id="@+id/viText1"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="15dp"
+                android:id="@+id/viLayout1">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="目前总共收入项为 200 元了"
+
+                    android:layout_marginLeft="70dp"
+                    android:textSize="15sp"
+                    android:id="@+id/zanText"/>
+
+            </LinearLayout>
+
+
+            <LinearLayout android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="100dp"
+                android:id="@+id/viLayout2"
+                >
+
+                <com.echo.holographlibrary.PieGraph
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginTop="15dp"
+                    android:id="@+id/pieGraph2"
+                    />
+
+
+                <LinearLayout android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="50dp"
+
+                    >
+
+
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="还没完成"
+
+                        android:background="#FF0000"
+                        />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="已经完成"
+                        android:layout_marginTop="15dp"
+                        android:background="#FFBB33"
+                        />
+
+                </LinearLayout>
+
+
+
+
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="15dp"
+                    android:id="@+id/line_graph">
+
+
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="这是折线图哦~"
+
+                        android:layout_marginLeft="70dp"
+                        android:textSize="15sp"
+                        android:id="@+id/line_text"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+
+
+
+    </ScrollView>
+</android.support.design.widget.CoordinatorLayout>

@@ -1,0 +1,36 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="功能">
+        <menu>
+            <item
+                android:id="@+id/nav_by_date_search"
+                android:icon="@drawable/ic_event"
+                android:title="按日期查询" />
+            <item
+                android:id="@+id/nav_by_category_search"
+                android:icon="@drawable/ic_dns"
+                android:title="按类型查询" />
+
+            <item
+                android:id="@+id/nav_analyst"
+                android:icon="@drawable/ic_timeline"
+                android:title="分析" />
+        </menu>
+
+
+    </item>
+
+    <item android:title="设置">
+        <menu>
+            <item
+                android:id="@+id/set_goal"
+                android:icon="@drawable/ic_code"
+                android:title="目标设置" />
+            <!--<item-->
+                <!--android:id="@+id/set_mes"-->
+                <!--android:icon="@drawable/ic_donut"-->
+                <!--android:title="提醒设置" />-->
+        </menu>
+    </item>
+
+</menu>
