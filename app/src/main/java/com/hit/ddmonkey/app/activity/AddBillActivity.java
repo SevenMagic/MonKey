@@ -6,7 +6,6 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
-import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.InputType;
 import android.text.TextUtils;
@@ -19,16 +18,14 @@ import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
-
 import com.hit.ddmonkey.app.database.MonkeyDatabaseHelper;
 import com.hit.ddmonkey.app.R;
-
 import java.util.Calendar;
 
 /**
  * Created by dusz on 2015/12/29 0029.
  */
-public class AddBillActivity extends ActionBarActivity {
+public class AddBillActivity extends BaseActivity {
 
     RadioGroup IOGroup;
     Spinner categorySpinner;
@@ -190,8 +187,21 @@ public class AddBillActivity extends ActionBarActivity {
                     finish();
                 }
                 else {
-                    Snackbar.make(view, "内容不全", Snackbar.LENGTH_LONG)
+                    Snackbar.make(view, "内容不全,but for test", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
+
+                    //方便加入测试
+//                    SQLiteDatabase monkeyDatabase = monkeyDatabaseHelper.getWritableDatabase();//读入数据库
+//                    ContentValues values = new ContentValues();
+//                    values.put("io","+");
+//                    values.put("money",63.6);
+//                    values.put("date","2016-3-5");
+//                    values.put("category","快速测试");
+//                    values.put("dateid",currentYearMonthDayHourMinuteSecond);
+//                    values.put("note", "无");
+//                    monkeyDatabase.insert("Bill", null, values);
+//                    values.clear();
+//                    finish();
                 }
 
 

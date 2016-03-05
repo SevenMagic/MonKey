@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import com.hit.ddmonkey.app.R;
 import com.hit.ddmonkey.app.DDUser;
+import com.hit.ddmonkey.app.activity.BaseActivity;
 import com.hit.ddmonkey.app.activity.MainActivity;
 
 import butterknife.Bind;

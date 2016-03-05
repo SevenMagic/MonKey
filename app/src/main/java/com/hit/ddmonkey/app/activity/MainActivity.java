@@ -1,15 +1,17 @@
 package com.hit.ddmonkey.app.activity;
 
+
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
+
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.support.design.widget.FloatingActionButton;
+
 import android.support.design.widget.NavigationView;
+import android.support.design.widget.Snackbar;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -17,23 +19,25 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.support.v7.widget.helper.ItemTouchHelper;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
 import com.hit.ddmonkey.app.BillRecord;
 import com.hit.ddmonkey.app.DDUser;
 import com.hit.ddmonkey.app.Goal;
 import com.hit.ddmonkey.app.database.MonkeyDatabaseHelper;
 import com.hit.ddmonkey.app.MyRecycleViewAdapter;
 import com.hit.ddmonkey.app.R;
-import com.hit.ddmonkey.app.login.BaseActivity;
+
+import com.hit.ddmonkey.app.activity.BaseActivity;
 import com.hit.ddmonkey.app.login.LoginByAccount;
 
 import java.util.*;
+
+import com.getbase.floatingactionbutton.FloatingActionButton;
+import com.getbase.floatingactionbutton.FloatingActionsMenu;
 
 
 public class MainActivity extends BaseActivity {
@@ -119,8 +123,8 @@ public class MainActivity extends BaseActivity {
         ItemTouchHelper itemTouchHelper = new ItemTouchHelper(mCallback);
         itemTouchHelper.attachToRecyclerView(recyclerview);
 
-        /*悬浮按钮--显示一个Snackbar*/
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.bill_out_fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -129,7 +133,6 @@ public class MainActivity extends BaseActivity {
 
                 Intent intent = new Intent(MainActivity.this,AddBillActivity.class);
                 startActivity(intent);
-
             }
         });
 

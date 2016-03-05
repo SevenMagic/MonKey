@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.hit.ddmonkey.app.Constants;
 import com.hit.ddmonkey.app.R;
+
 import com.hit.ddmonkey.app.activity.MainActivity;
 import com.tencent.tauth.IUiListener;
 import com.tencent.tauth.Tencent;
@@ -18,6 +19,9 @@ import com.tencent.tauth.UiError;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import com.hit.ddmonkey.app.activity.BaseActivity;
+
 
 import butterknife.Bind;
 import butterknife.ButterKnife;

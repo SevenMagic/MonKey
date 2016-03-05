@@ -4,7 +4,6 @@ import android.app.DatePickerDialog;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -25,7 +24,7 @@ import java.util.List;
 /**
  * Created by dusz on 2015/12/30 0030.
  */
-public class ByDateActivity extends ActionBarActivity {
+public class ByDateActivity extends BaseActivity {
 
     MonkeyDatabaseHelper monkeyDatabaseHelperDa;
 
