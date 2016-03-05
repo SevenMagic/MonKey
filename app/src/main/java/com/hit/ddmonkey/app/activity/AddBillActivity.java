@@ -191,17 +191,17 @@ public class AddBillActivity extends BaseActivity {
                         .setAction("Action", null).show();
 
                     //方便加入测试
-                    SQLiteDatabase monkeyDatabase = monkeyDatabaseHelper.getWritableDatabase();//读入数据库
-                    ContentValues values = new ContentValues();
-                    values.put("io","+");
-                    values.put("money",63.6);
-                    values.put("date","2016-3-5");
-                    values.put("category","快速测试");
-                    values.put("dateid",currentYearMonthDayHourMinuteSecond);
-                    values.put("note", "无");
-                    monkeyDatabase.insert("Bill", null, values);
-                    values.clear();
-                    finish();
+//                    SQLiteDatabase monkeyDatabase = monkeyDatabaseHelper.getWritableDatabase();//读入数据库
+//                    ContentValues values = new ContentValues();
+//                    values.put("io","+");
+//                    values.put("money",63.6);
+//                    values.put("date","2016-3-5");
+//                    values.put("category","快速测试");
+//                    values.put("dateid",currentYearMonthDayHourMinuteSecond);
+//                    values.put("note", "无");
+//                    monkeyDatabase.insert("Bill", null, values);
+//                    values.clear();
+//                    finish();
                 }
 
 
