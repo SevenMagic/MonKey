@@ -12,6 +12,7 @@ import android.view.animation.AlphaAnimation;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.hit.ddmonkey.app.Constants;
 import com.hit.ddmonkey.app.R;
 import com.hit.ddmonkey.app.DDUser;
 import com.hit.ddmonkey.app.activity.MainActivity;
@@ -32,7 +33,6 @@ public class SplashActivity extends BaseActivity {
     private static final int WRITE_EXTERNAL_STORAGE_ALLOWED=2;
     private static final int sleepTime=2000;
     //BmobKey
-    private static final String BMOB_APP_KEY="42af7c593262427462293346704b8e88";
 
     Context context;
     @Override
@@ -44,7 +44,8 @@ public class SplashActivity extends BaseActivity {
         //初始化ButterKnife和Bmob
 
         ButterKnife.bind(this);
-        Bmob.initialize(this, BMOB_APP_KEY);
+        Bmob.initialize(this, Constants.BMOB_APPID);
+
 
 
         rootLayout = (RelativeLayout) findViewById(R.id.splash_root);
