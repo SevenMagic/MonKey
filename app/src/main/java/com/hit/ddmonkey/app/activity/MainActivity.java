@@ -3,8 +3,9 @@ package com.hit.ddmonkey.app.activity;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.support.design.widget.FloatingActionButton;
+
 import android.support.design.widget.NavigationView;
+import android.support.design.widget.Snackbar;
 import android.support.v4.widget.DrawerLayout;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -23,6 +24,9 @@ import com.hit.ddmonkey.app.database.MonkeyDatabaseHelper;
 import com.hit.ddmonkey.app.MyRecycleViewAdapter;
 import com.hit.ddmonkey.app.R;
 import java.util.*;
+
+import com.getbase.floatingactionbutton.FloatingActionButton;
+import com.getbase.floatingactionbutton.FloatingActionsMenu;
 
 
 public class MainActivity extends BaseActivity {
@@ -108,8 +112,8 @@ public class MainActivity extends BaseActivity {
         ItemTouchHelper itemTouchHelper = new ItemTouchHelper(mCallback);
         itemTouchHelper.attachToRecyclerView(recyclerview);
 
-        /*悬浮按钮--显示一个Snackbar*/
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.bill_out_fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -118,7 +122,6 @@ public class MainActivity extends BaseActivity {
 
                 Intent intent = new Intent(MainActivity.this,AddBillActivity.class);
                 startActivity(intent);
-
             }
         });
 

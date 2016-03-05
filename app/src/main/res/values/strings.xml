@@ -11,4 +11,9 @@
     <string name="sreachBill">查询</string>
     <string name="Version_number_is_wrong">Version_number_is_wrong</string>
 
+    <style name="menu_labels_style">
+        <item name="android:background">@drawable/fab_label_background</item>
+        <item name="android:textColor">@color/text</item>
+    </style>
+
 </resources>

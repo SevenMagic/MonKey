@@ -39,4 +39,9 @@
   <color name="deep_skyblue">#00BFFF</color>
   <color name="white">#FFFFFF</color>
   <color name="light_gray">#D3D3D3</color>
+
+  <color name="black_semi_transparent">#B2000000</color>
+  <color name="text">#FFFFFF</color>
+  <color name="half_black">#808080</color>
+  <color name="white_pressed">#f1f1f1</color>
 </resources>
