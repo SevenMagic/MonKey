@@ -11,6 +11,7 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -74,32 +75,44 @@ public class RegisterActivity extends BaseActivity {
     @OnClick(R.id.bt_register_getsmscode)
     public void getSmsCode(){
 
-        if (ContextCompat.checkSelfPermission(RegisterActivity.this,
-                Manifest.permission.READ_PHONE_STATE)
-                != PackageManager.PERMISSION_GRANTED) {
-
-            // Should we show an explanation?
-            if (ActivityCompat.shouldShowRequestPermissionRationale(RegisterActivity.this,
-                    Manifest.permission.READ_PHONE_STATE)) {
-
-                // Show an expanation to the user *asynchronously* -- don't block
-                // this thread waiting for the user's response! After the user
-                // sees the explanation, try again to request the permission.
-
-
-            } else {
-
-                // No explanation needed, we can request the permission.
-                ActivityCompat.requestPermissions(RegisterActivity.this,
-                        new String[]{Manifest.permission.READ_PHONE_STATE},
-                        READ_PHONE_STATE_OK);
-
-
-                // MY_PERMISSIONS_REQUEST_READ_CONTACTS is an
-                // app-defined int constant. The callback method gets the
-                // result of the request.
-            }
+        String phoneNumber=ed_phoneNum.getText().toString();
+        if(phoneNumber==null||phoneNumber.length()!=11){
+            toast("手机号不正确");
+            return;
         }
+        BmobQuery<DDUser> query=new BmobQuery<DDUser>();
+        query.addWhereEqualTo("mobilePhoneNumber", phoneNumber);
+
+        query.findObjects(context, new FindListener<DDUser>() {
+            @Override
+            public void onSuccess(List<DDUser> list) {
+                if (!list.isEmpty()) {
+                    toast("该电话号码已经注册");
+                    bt_getsmsCode.setClickable(true);
+                    return;
+                }
+            }
+
+            @Override
+            public void onError(int i, String s) {
+                toast("查询手机号" + s);
+            }
+        });
+
+        BmobSMS.requestSMSCode(context, phoneNumber, SMS_MODEL_NAME, new RequestSMSCodeListener() {
+            @Override
+            public void done(Integer integer, BmobException e) {
+                if (e == null) {
+                    MyCounter counter = new MyCounter(60000, 1000, bt_getsmsCode);
+                    counter.start();
+                } else {
+                    toast("wrong" + e);
+                    return;
+                }
+            }
+        });
+
+
     }
 
     @OnClick(R.id.bt_register_ok)
@@ -136,7 +149,7 @@ public class RegisterActivity extends BaseActivity {
         newUser.signOrLogin(context, smsCode, new SaveListener() {
             @Override
             public void onSuccess() {
-                toast("注册成功");
+                showSnakeBar(new View(RegisterActivity.this),"注册成功");
                 Log.i("test", "" + newUser.getUsername() + "-" + newUser.getAge() + "-" + newUser.getObjectId());
                 startActivity(new Intent(RegisterActivity.this, LoginByAccount.class));
                 finish();
@@ -150,64 +163,6 @@ public class RegisterActivity extends BaseActivity {
         });
 
     }
-
-    @Override
-    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        if(requestCode==READ_PHONE_STATE_OK){
-            if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                // Permission Granted
-                //设置系统获得了发送短信的许可
-                sendMessage();
-
-            } else {
-                // Permission Denied
-                toast("wrong!!!");
-            }
-
-
-        }
-    }
-    public void sendMessage(){
-        String phoneNumber=ed_phoneNum.getText().toString();
-        if(phoneNumber==null||phoneNumber.length()!=11){
-            toast("手机号不正确");
-            return;
-        }
-        toast("ALLOW");
-        BmobQuery<DDUser> query=new BmobQuery<DDUser>();
-        query.addWhereEqualTo("mobilePhoneNumber", phoneNumber);
-
-        query.findObjects(context, new FindListener<DDUser>() {
-            @Override
-            public void onSuccess(List<DDUser> list) {
-                if(!list.isEmpty()){
-                    toast("该电话号码已经注册");
-                    bt_getsmsCode.setClickable(true);
-                    return;
-                }
-            }
-            @Override
-            public void onError(int i, String s) {
-                toast("查询手机号"+s);
-            }
-        });
-
-        BmobSMS.requestSMSCode(context, phoneNumber, SMS_MODEL_NAME, new RequestSMSCodeListener() {
-            @Override
-            public void done(Integer integer, BmobException e) {
-                if (e == null) {
-                    toast("验证码是" + integer);
-                    MyCounter counter = new MyCounter(60000, 1000, bt_getsmsCode);
-                    counter.start();
-                }else{
-                    toast("wrong"+e);
-                }
-            }
-        });
-
-    }
-
     class MyCounter extends CountDownTimer {
         Button mButton;
 
