@@ -1,10 +1,13 @@
 package com.hit.ddmonkey.app.login;
 
+import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.view.animation.AlphaAnimation;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -25,6 +28,9 @@ public class SplashActivity extends BaseActivity {
     private RelativeLayout rootLayout;
     private TextView versionText;
 
+
+    private static final int READ_PHONE_STATE_ALLOWED=1;
+    private static final int WRITE_EXTERNAL_STORAGE_ALLOWED=2;
     private static final int sleepTime=2000;
     //BmobKey
     private static final String BMOB_APP_KEY="42af7c593262427462293346704b8e88";
@@ -45,10 +51,12 @@ public class SplashActivity extends BaseActivity {
         rootLayout = (RelativeLayout) findViewById(R.id.splash_root);
         versionText = (TextView) findViewById(R.id.tv_version);
 
+
         versionText.setText(getVersion());
         AlphaAnimation animation = new AlphaAnimation(0.3f, 1.0f);
         animation.setDuration(1500);
         rootLayout.startAnimation(animation);
+        askPermission();
 
     }
 
@@ -105,5 +113,47 @@ public class SplashActivity extends BaseActivity {
             e.printStackTrace();
             return st;
         }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+
+        switch (requestCode){
+            case READ_PHONE_STATE_ALLOWED:
+                toast("READ_PHONE_STATE_ALLOWED");
+            case WRITE_EXTERNAL_STORAGE_ALLOWED:
+                toast("WRITE_EXTERNAL_STORAGE_ALLOWED");
+                default:
+                    toast("not get permission");
+        }
+    }
+
+    private void askPermission() {
+
+        int phoneState = ContextCompat.checkSelfPermission(SplashActivity.this, Manifest.permission.READ_PHONE_STATE);
+        int writeExternalStorage = ContextCompat.checkSelfPermission(SplashActivity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE);
+        if (phoneState != PackageManager.PERMISSION_GRANTED) {
+
+            if (ActivityCompat.shouldShowRequestPermissionRationale(SplashActivity.this, Manifest.permission.READ_PHONE_STATE)) {
+                //处理用户拒绝之后的事件
+
+            } else {
+                ActivityCompat.requestPermissions(SplashActivity.this, new String[]{Manifest.permission.READ_PHONE_STATE}, READ_PHONE_STATE_ALLOWED);
+
+            }
+        }
+        if (writeExternalStorage != PackageManager.PERMISSION_GRANTED) {
+
+            if (ActivityCompat.shouldShowRequestPermissionRationale(SplashActivity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
+                //处理用户拒绝之后的事件
+
+            } else {
+                ActivityCompat.requestPermissions(SplashActivity.this,
+                        new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, WRITE_EXTERNAL_STORAGE_ALLOWED);
+
+            }
+        }
+
     }
 }

@@ -37,6 +37,7 @@
   <color name="black_overlay">#66000000</color>
   <color name="sea_green">#54FF9F</color>
   <color name="deep_skyblue">#00BFFF</color>
+  <color name="button_pressed">#00AFFF</color>
   <color name="white">#FFFFFF</color>
   <color name="light_gray">#D3D3D3</color>
 
