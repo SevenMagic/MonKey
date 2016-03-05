@@ -9,6 +9,7 @@ import android.view.MenuInflater;
 import android.widget.TextView;
 
 import com.hit.ddmonkey.app.R;
+import com.hit.ddmonkey.app.activity.BaseActivity;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;

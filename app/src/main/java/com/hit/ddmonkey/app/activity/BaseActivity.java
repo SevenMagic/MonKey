@@ -1,4 +1,4 @@
-package com.hit.ddmonkey.app.login;
+package com.hit.ddmonkey.app.activity;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;

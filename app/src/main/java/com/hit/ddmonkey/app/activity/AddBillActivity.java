@@ -6,7 +6,6 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
-import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.InputType;
 import android.text.TextUtils;
@@ -19,16 +18,14 @@ import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
-
 import com.hit.ddmonkey.app.database.MonkeyDatabaseHelper;
 import com.hit.ddmonkey.app.R;
-
 import java.util.Calendar;
 
 /**
  * Created by dusz on 2015/12/29 0029.
  */
-public class AddBillActivity extends ActionBarActivity {
+public class AddBillActivity extends BaseActivity {
 
     RadioGroup IOGroup;
     Spinner categorySpinner;
