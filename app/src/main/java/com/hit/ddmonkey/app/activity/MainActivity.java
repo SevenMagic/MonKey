@@ -1,6 +1,7 @@
 package com.hit.ddmonkey.app.activity;
 
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
@@ -20,18 +21,22 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.hit.ddmonkey.app.BillRecord;
+import com.hit.ddmonkey.app.DDUser;
 import com.hit.ddmonkey.app.Goal;
 import com.hit.ddmonkey.app.database.MonkeyDatabaseHelper;
 import com.hit.ddmonkey.app.MyRecycleViewAdapter;
 import com.hit.ddmonkey.app.R;
+import com.hit.ddmonkey.app.login.BaseActivity;
+import com.hit.ddmonkey.app.login.LoginByAccount;
 
 import java.util.*;
 
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends BaseActivity {
 
     DrawerLayout drawerLayout;
     NavigationView view;
@@ -169,6 +174,9 @@ public class MainActivity extends ActionBarActivity {
                         startActivity(intent);
 
                         break;
+                    case R.id.user_logout:
+                        logout();
+
 //                    case R.id.set_mes:
 ////
 ////                        startActivity(intent1);
@@ -322,6 +330,42 @@ public class MainActivity extends ActionBarActivity {
     }
 
 
+    public void logout(){
+        final Dialog dialog;
+        final CharSequence[] items={"退出当前账号","关闭在荒野"};
+        AlertDialog.Builder builder =new AlertDialog.Builder(MainActivity.this);
+        builder.setItems(items, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                switch (i) {
+                    case 0:
+                        DDUser.logOut(MainActivity.this);
+                        DDUser currentUser = DDUser.getCurrentUser(MainActivity.this, DDUser.class);
+                        if (currentUser != null) {
+                            //退出登录失败
+                            return;
+                        }
+                        startActivity(new Intent(MainActivity.this, LoginByAccount.class));
+                        finish();
+
+                        break;
+                    case 1:
+                        Intent intent = new Intent(Intent.ACTION_MAIN);
+                        intent.addCategory(Intent.CATEGORY_HOME);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        startActivity(intent);
+                        break;
+                }
+                dialogInterface.dismiss();
+            }
+        });
+        View v=new View(MainActivity.this);
+
+        AlertDialog alertDialog=builder.create();
+
+        alertDialog.show();
+
+    }
 
 }
 
