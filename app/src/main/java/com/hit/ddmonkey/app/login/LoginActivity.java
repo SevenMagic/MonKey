@@ -72,18 +72,15 @@ public class LoginActivity extends BaseActivity {
 
     private static Tencent mTencent;
 
-
-    @OnClick(R.id.bt_login_byqq)
+    @OnClick(R.id.bt_login_qq)
     public void bt_login_byqq(){
-
-
-
+        qqAuthorize();
     }
-    @OnClick(R.id.bt_login_byweixin)
+    @OnClick(R.id.bt_login_weixin)
     public void bt_login_byweixin(){
 
     }
-    @OnClick(R.id.bt_login_byweibo)
+    @OnClick(R.id.bt_login_weibo)
     public void bt_login_byweibo(){
 
     }

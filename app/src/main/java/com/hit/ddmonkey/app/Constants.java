@@ -14,7 +14,8 @@ public class Constants {
     /**
      * DDMonkey的腾讯APPID
      */
-    public static final String QQ_APP_ID ="1105230678";
+    //public static final String QQ_APP_ID ="1105230678";
+    public static final String QQ_APP_ID ="222222";
 
     /**
      *  微信平台的APPID,请自行前往微信开放平台注册申请应用
