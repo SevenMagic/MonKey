@@ -87,19 +87,19 @@
             android:layout_height="wrap_content"
             android:text="QQ图片"
             android:layout_weight="1"
-            android:id="@+id/bt_login_byqq"/>
+            android:id="@+id/bt_login_qq"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="微信图片"
             android:layout_weight="1"
-            android:id="@+id/bt_login_byweixin"/>
+            android:id="@+id/bt_login_weixin"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="微博图片"
             android:layout_weight="1"
-            android:id="@+id/bt_login_byweibo"/>
+            android:id="@+id/bt_login_weibo"/>
 
         </LinearLayout>
 </LinearLayout>

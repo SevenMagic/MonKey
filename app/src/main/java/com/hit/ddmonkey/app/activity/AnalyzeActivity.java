@@ -2,7 +2,7 @@
 
 package com.hit.ddmonkey.app.activity;
 
-        import android.app.Activity;
+
         import android.database.Cursor;
         import android.database.sqlite.SQLiteDatabase;
         import android.graphics.Color;
@@ -28,7 +28,7 @@ package com.hit.ddmonkey.app.activity;
 /**
  * Created by 道谊戎 on 2015/12/30.
  */
-public class AnalyzeActivity extends Activity {
+public class AnalyzeActivity extends BaseActivity {
 
     private PieGraph pieGraph;
     private PieGraph pieGraph2;
