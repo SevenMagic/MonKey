@@ -26,7 +26,7 @@ package com.hit.ddmonkey.app.activity;
         import java.util.List;
 
 /**
- * Created by 道谊戎 on 2015/12/30.
+ * Created by 道谊戎
  */
 public class AnalyzeActivity extends BaseActivity {
 

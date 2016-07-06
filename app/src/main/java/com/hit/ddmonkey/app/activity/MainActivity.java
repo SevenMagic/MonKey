@@ -4,15 +4,12 @@ package com.hit.ddmonkey.app.activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
-
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-
-import android.support.design.widget.NavigationView;
-import android.support.design.widget.Snackbar;
-import android.support.v4.widget.DrawerLayout;
 import android.os.Bundle;
+import android.support.design.widget.NavigationView;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
@@ -22,22 +19,19 @@ import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.TextView;
+
+import com.getbase.floatingactionbutton.FloatingActionButton;
 import com.hit.ddmonkey.app.BillRecord;
 import com.hit.ddmonkey.app.DDUser;
 import com.hit.ddmonkey.app.Goal;
-import com.hit.ddmonkey.app.database.MonkeyDatabaseHelper;
 import com.hit.ddmonkey.app.MyRecycleViewAdapter;
 import com.hit.ddmonkey.app.R;
-
-import com.hit.ddmonkey.app.activity.BaseActivity;
+import com.hit.ddmonkey.app.database.MonkeyDatabaseHelper;
 import com.hit.ddmonkey.app.login.LoginByAccount;
 
-import java.util.*;
-
-import com.getbase.floatingactionbutton.FloatingActionButton;
-import com.getbase.floatingactionbutton.FloatingActionsMenu;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class MainActivity extends BaseActivity {
@@ -124,18 +118,25 @@ public class MainActivity extends BaseActivity {
         itemTouchHelper.attachToRecyclerView(recyclerview);
 
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.bill_out_fab);
-        fab.setOnClickListener(new View.OnClickListener() {
+        FloatingActionButton fab_out = (FloatingActionButton) findViewById(R.id.bill_out_fab);
+        fab_out.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                Snackbar.make(view, "Here's a Snackbar", Snackbar.LENGTH_LONG)
-//                        .setAction("Action", null).show();
 
                 Intent intent = new Intent(MainActivity.this,AddBillActivity.class);
                 startActivity(intent);
             }
         });
 
+        FloatingActionButton fab_in = (FloatingActionButton) findViewById(R.id.bill_out_fab);
+        fab_in.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(MainActivity.this,AddBillActivity.class);
+                startActivity(intent);
+            }
+        });
 
         /*侧滑菜单*/
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -180,11 +181,7 @@ public class MainActivity extends BaseActivity {
                     case R.id.user_logout:
                         logout();
 
-//                    case R.id.set_mes:
-////
-////                        startActivity(intent1);
-//
-//                        break;
+
 
                 }
                 return true;
@@ -282,12 +279,6 @@ public class MainActivity extends BaseActivity {
         cursor.close();
 
     }
-//    public void initItemsShow(){
-//        items = new ArrayList<>();
-//        initItems();
-//        MyRecycleViewAdapter myadapter = new MyRecycleViewAdapter(items,R.layout.left_card);
-//        recyclerview.setAdapter(myadapter);
-//    }
 
     public void initGoal(){
         SQLiteDatabase monkeyDatabase = monkeyDatabaseHelper.getWritableDatabase();//读入数据库
@@ -306,6 +297,7 @@ public class MainActivity extends BaseActivity {
         cursor.close();
 
     }
+
     public void initGoalShow(){
         initGoal();
         if(goalList.size() != 0)
@@ -335,7 +327,7 @@ public class MainActivity extends BaseActivity {
 
     public void logout(){
         final Dialog dialog;
-        final CharSequence[] items={"退出当前账号","关闭在荒野"};
+        final CharSequence[] items={"退出当前账号","关闭应用"};
         AlertDialog.Builder builder =new AlertDialog.Builder(MainActivity.this);
         builder.setItems(items, new DialogInterface.OnClickListener() {
             @Override

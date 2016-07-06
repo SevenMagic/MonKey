@@ -11,7 +11,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 /**
- * Created by 道谊戎 on 2016/3/2.
+ * Created by 道谊戎
  */
 public class BaseActivity extends AppCompatActivity {
 

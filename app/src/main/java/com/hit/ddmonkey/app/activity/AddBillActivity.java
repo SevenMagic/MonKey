@@ -23,7 +23,7 @@ import com.hit.ddmonkey.app.R;
 import java.util.Calendar;
 
 /**
- * Created by dusz on 2015/12/29 0029.
+ * Created by dusz
  */
 public class AddBillActivity extends BaseActivity {
 

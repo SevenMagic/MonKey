@@ -18,31 +18,35 @@
 <resources>
 
 
-  <color name="primary">#009688</color>
-  <color name="primary_dark">#00897b</color>
-  <color name="primary_light">#B2DFDB</color>
-  <color name="accent">#ffb74d</color>
+  <color name="primary">#607D8B</color>
+  <color name="primary_dark">#455A64</color>
+  <color name="primary_light">#CFD8DC</color>
+  <color name="accent">#4CAF50</color>
   <color name="primary_text">#212121</color>
   <color name="secondary_text">#727272</color>
   <color name="icons">#FFFFFF</color>
   <color name="divider">#B6B6B6</color>
+  <color name="accent_pressed">#4CAF50</color>
 
   <color name="window_background">#FFF5F5F5</color>
   <color name="tab_bgcolor">#eeeeee</color>
 
   <color name="colorPrimary">#3F51B5</color>
   <color name="colorPrimaryDark">#303F9F</color>
-  <color name="colorAccent">#FF4081</color>
+
 
   <color name="black_overlay">#66000000</color>
   <color name="sea_green">#54FF9F</color>
   <color name="deep_skyblue">#00BFFF</color>
   <color name="button_pressed">#00AFFF</color>
+
   <color name="white">#FFFFFF</color>
+  <color name="half_black">#808080</color>
+  <color name="white_pressed">#f1f1f1</color>
+
   <color name="light_gray">#D3D3D3</color>
 
   <color name="black_semi_transparent">#B2000000</color>
   <color name="text">#FFFFFF</color>
-  <color name="half_black">#808080</color>
-  <color name="white_pressed">#f1f1f1</color>
+
 </resources>

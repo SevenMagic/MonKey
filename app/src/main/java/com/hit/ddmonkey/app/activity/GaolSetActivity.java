@@ -18,7 +18,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
- * Created by dusz on 2015/12/29 0029.
+ * Created by dusz
  */
 public class GaolSetActivity extends BaseActivity {
 

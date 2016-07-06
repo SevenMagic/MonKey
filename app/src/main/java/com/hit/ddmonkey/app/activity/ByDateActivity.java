@@ -22,7 +22,7 @@ import java.util.Calendar;
 import java.util.List;
 
 /**
- * Created by dusz on 2015/12/30 0030.
+ * Created by dusz
  */
 public class ByDateActivity extends BaseActivity {
 
