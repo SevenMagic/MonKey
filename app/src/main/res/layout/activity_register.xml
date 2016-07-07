@@ -167,9 +167,8 @@
 
             android:id="@+id/bt_register_ok"
             android:text="注 册"
-            android:background="@drawable/button_base"
-
-
+            android:background="@color/deep_skyblue"
+            android:textColor="@color/white"
         />
     </LinearLayout>
 

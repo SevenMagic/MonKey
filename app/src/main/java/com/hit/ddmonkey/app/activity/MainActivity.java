@@ -124,16 +124,24 @@ public class MainActivity extends BaseActivity {
             public void onClick(View view) {
 
                 Intent intent = new Intent(MainActivity.this,AddBillActivity.class);
+
+                Bundle iobundle = new Bundle();
+                iobundle.putString("ioflag","-");
+                intent.putExtras(iobundle);
                 startActivity(intent);
             }
         });
 
-        FloatingActionButton fab_in = (FloatingActionButton) findViewById(R.id.bill_out_fab);
+        FloatingActionButton fab_in = (FloatingActionButton) findViewById(R.id.bill_in_fab);
         fab_in.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
+
                 Intent intent = new Intent(MainActivity.this,AddBillActivity.class);
+                Bundle iobundle = new Bundle();
+                iobundle.putString("ioflag","+");
+                intent.putExtras(iobundle);
                 startActivity(intent);
             }
         });
@@ -222,9 +230,6 @@ public class MainActivity extends BaseActivity {
 
     }
 
-
-
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -253,7 +258,6 @@ public class MainActivity extends BaseActivity {
         if (monkeyDatabaseHelper != null)
             monkeyDatabaseHelper.close();
     }
-
 
 
     public void initItems(){
@@ -321,7 +325,6 @@ public class MainActivity extends BaseActivity {
 
 
     }
-
 
     public void logout(){
         final Dialog dialog;

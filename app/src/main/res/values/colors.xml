@@ -27,6 +27,7 @@
   <color name="icons">#FFFFFF</color>
   <color name="divider">#B6B6B6</color>
   <color name="accent_pressed">#ffb74d</color>
+  <color name="accent2">#ffc107</color>
 
   <color name="window_background">#FFF5F5F5</color>
   <color name="tab_bgcolor">#eeeeee</color>
@@ -34,11 +35,9 @@
   <color name="colorPrimary">#3F51B5</color>
   <color name="colorPrimaryDark">#303F9F</color>
 
-
+  <color name="deep_skyblue">#448aff</color>
   <color name="black_overlay">#66000000</color>
-  <color name="sea_green">#54FF9F</color>
-  <color name="deep_skyblue">#00BFFF</color>
-  <color name="button_pressed">#00AFFF</color>
+
 
   <color name="white">#FFFFFF</color>
   <color name="half_black">#808080</color>

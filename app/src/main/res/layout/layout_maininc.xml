@@ -93,6 +93,7 @@
         app:layout_behavior="com.hit.ddmonkey.app.ScrollAwareFAMBehavior"
         app:layout_anchor="@id/recycler_view"
         app:layout_anchorGravity="bottom|right|end"
+
         fab:fab_addButtonColorNormal="@color/accent"
         fab:fab_addButtonColorPressed="@color/accent_pressed"
         fab:fab_addButtonPlusIconColor="@color/half_black"
@@ -104,7 +105,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/bill_in_fab"
-            fab:fab_colorNormal="@color/accent"
+            fab:fab_colorNormal="@color/accent2"
             fab:fab_size="mini"
 
             fab:fab_title="收入"
@@ -117,7 +118,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/bill_out_fab"
-            fab:fab_colorNormal="@color/accent"
+            fab:fab_colorNormal="@color/accent2"
             fab:fab_size="mini"
 
             fab:fab_title="支出"/>

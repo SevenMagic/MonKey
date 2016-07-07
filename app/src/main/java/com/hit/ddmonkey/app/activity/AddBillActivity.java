@@ -15,11 +15,12 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
-import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
-import com.hit.ddmonkey.app.database.MonkeyDatabaseHelper;
+
 import com.hit.ddmonkey.app.R;
+import com.hit.ddmonkey.app.database.MonkeyDatabaseHelper;
+
 import java.util.Calendar;
 
 /**
@@ -27,7 +28,7 @@ import java.util.Calendar;
  */
 public class AddBillActivity extends BaseActivity {
 
-    RadioGroup IOGroup;
+
     Spinner categorySpinner;
     ArrayAdapter<String> categoryAdapter = null;
     EditText billMoneyET;
@@ -62,6 +63,10 @@ public class AddBillActivity extends BaseActivity {
 
         setContentView(R.layout.activity_billadd);
 
+        //
+        Bundle iobundle = this.getIntent().getExtras();
+        ioFlag = iobundle.getString("ioflag");
+
         final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar1);
         toolbar.setTitle("账单记录");
         setSupportActionBar(toolbar);
@@ -72,26 +77,26 @@ public class AddBillActivity extends BaseActivity {
 
         addBillBU = (FloatingActionButton)findViewById(R.id.confirmfab);
 
-        IOGroup = (RadioGroup)findViewById(R.id.io_group);
+
         categorySpinner = (Spinner)findViewById(R.id.categorySpinner);
         categoryAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,categoryList);//
         categoryAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);//下拉列表风格
         categorySpinner.setAdapter(categoryAdapter);
         categorySpinner.setVisibility(View.VISIBLE);
 
-        IOGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (checkedId == R.id.outRadioButton) {
-                    ioFlag = "-";
-
-                } else if (checkedId == R.id.inRadioButton) {
-                    ioFlag = "+";
-
-                }
-            }
-        });
+//        IOGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+//
+//            @Override
+//            public void onCheckedChanged(RadioGroup group, int checkedId) {
+//                if (checkedId == R.id.outRadioButton) {
+//                    ioFlag = "-";
+//
+//                } else if (checkedId == R.id.inRadioButton) {
+//                    ioFlag = "+";
+//
+//                }
+//            }
+//        });
 
         categorySpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 
