@@ -1,23 +1,17 @@
 package com.hit.ddmonkey.app.login;
 
-import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.os.CountDownTimer;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 
-import com.hit.ddmonkey.app.R;
 import com.hit.ddmonkey.app.DDUser;
+import com.hit.ddmonkey.app.R;
 import com.hit.ddmonkey.app.activity.BaseActivity;
 
 import java.util.List;
@@ -33,7 +27,7 @@ import cn.bmob.v3.listener.FindListener;
 import cn.bmob.v3.listener.SaveListener;
 
 /**
- * Created by 道谊戎 on 2016/3/2.
+ * Created by 道谊戎
  */
 public class RegisterActivity extends BaseActivity {
 
@@ -41,10 +35,8 @@ public class RegisterActivity extends BaseActivity {
     Context context=RegisterActivity.this;
     private static final String SMS_MODEL_NAME="DDMonkey";
     private static final int READ_PHONE_STATE_OK=1;
-    @Bind(R.id.toolbar)
+    @Bind(R.id.toolbar_re)
     Toolbar toolbar;
-    @Bind(R.id.tv_toolbar)
-    TextView tv_toolbar;
 
 
     @Bind(R.id.ed_register_phonenumber)
@@ -63,12 +55,8 @@ public class RegisterActivity extends BaseActivity {
         setContentView(R.layout.activity_register);
         ButterKnife.bind(this);
 
-        tv_toolbar.setText("注册");
-        tv_toolbar.setTextColor(Color.WHITE);
-        toolbar.setTitle(" ");
+        toolbar.setTitle("用户注册");
         toolbar.inflateMenu(R.menu.base_toolbar_menu);
-
-
 
     }
 

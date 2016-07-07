@@ -1,105 +1,149 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
 
-    <include layout="@layout/toolbar"/>
-
-    <ImageView
-        android:id="@+id/iv_avatar"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="100dp"
-        android:layout_gravity="center_horizontal"
-        android:background="@color/sea_green"
-        />
 
     <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/sea_green"
-        android:orientation="horizontal"
-        android:gravity="center"
-        android:layout_margin="20dp">
+        android:background="@color/primary">
+
+        <ImageView
+            android:id="@+id/iv_avatar"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="50dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/ic_launcher"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="70dp"
+        >
 
 
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:text="登陆"
-            android:layout_weight="1"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="5dp"
-            android:id="@+id/bt_login_byphone"/>
+            android:text="登录"
+            android:id="@+id/button_login"
+            android:shape="rectangle"
+            android:radius= "100dp"
+            android:layout_gravity="center_horizontal" />
+
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:text="注册"
-            android:layout_weight="1"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="5dp"
-            android:id="@+id/bt_login_register"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/sea_green"
-        android:orientation="horizontal"
-        android:gravity="center"
-        android:layout_margin="20dp"
-        >
-        <View
-            android:layout_width="wrap_content"
-            android:layout_height="3dp"
-            android:layout_weight="1"
-            android:background="@color/black_overlay"
-            />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="第三方登陆"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            />
-
-        <View
-            android:layout_width="wrap_content"
-            android:layout_height="3dp"
-            android:layout_weight="1"
-            android:background="@color/black_overlay"
-            />
-
-
+            android:id="@+id/button_register"
+            android:layout_marginTop="25dp"
+            android:radius= "45dp"
+            android:layout_gravity="center_horizontal" />
     </LinearLayout>
 
-
     <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/sea_green"
-        android:orientation="horizontal"
-        android:gravity="center"
-        android:layout_margin="20dp"
+        android:layout_gravity="bottom"
+        android:layout_marginTop="70dp"
         >
-        <Button
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="QQ图片"
-            android:layout_weight="1"
-            android:id="@+id/bt_login_qq"/>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="微信图片"
-            android:layout_weight="1"
-            android:id="@+id/bt_login_weixin"/>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="微博图片"
-            android:layout_weight="1"
-            android:id="@+id/bt_login_weibo"/>
+
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_margin="20dp"
+            >
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="3dp"
+                android:layout_weight="1"
+                android:background="@color/black_overlay"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="第三方登陆"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                />
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="3dp"
+                android:layout_weight="1"
+                android:background="@color/black_overlay"
+                />
+
 
         </LinearLayout>
-</LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginLeft="40dp">
+
+                <ImageButton
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:id="@+id/bt_login_qq"
+                        android:layout_gravity="center_horizontal"
+                        android:background="@drawable/login_qq"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <ImageButton
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_gravity="center_horizontal"
+                        android:id="@+id/bt_login_weixin"
+                        android:background="@drawable/login_wechat" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginRight="40dp">
+
+                <ImageButton
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:id="@+id/bt_login_weibo"
+                        android:layout_gravity="center_horizontal"
+                        android:background="@drawable/login_weibo" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    </LinearLayout>
+

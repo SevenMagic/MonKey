@@ -1,7 +1,7 @@
 package com.hit.ddmonkey.app;
 
 /**
- * Created by 道谊戎 on 2016/3/5.
+ * Created by 道谊戎
  */
 public class Constants {
 

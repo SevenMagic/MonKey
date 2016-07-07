@@ -3,7 +3,7 @@ package com.hit.ddmonkey.app;
 import cn.bmob.v3.BmobUser;
 
 /**
- * Created by 道谊戎 on 2016/3/2.
+ * Created by 道谊戎
  */
 public class DDUser extends BmobUser {
 

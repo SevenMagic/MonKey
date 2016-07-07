@@ -1,7 +1,7 @@
 package com.hit.ddmonkey.app;
 
 /**
- * Created by dusz on 2015/12/24 0024.
+ * Created by dusz
  */
 public class BillRecord {
     private String IO;

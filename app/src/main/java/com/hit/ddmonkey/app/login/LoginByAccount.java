@@ -3,16 +3,14 @@ package com.hit.ddmonkey.app.login;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
-import android.widget.TextView;
 
-import com.hit.ddmonkey.app.R;
 import com.hit.ddmonkey.app.DDUser;
+import com.hit.ddmonkey.app.R;
 import com.hit.ddmonkey.app.activity.BaseActivity;
 import com.hit.ddmonkey.app.activity.MainActivity;
 
@@ -22,15 +20,11 @@ import butterknife.OnClick;
 import cn.bmob.v3.listener.SaveListener;
 
 /**
- * Created by 道谊戎 on 2016/3/2.
+ * Created by 道谊戎
  */
 public class LoginByAccount extends BaseActivity {
-        @Bind(R.id.toolbar)
+        @Bind(R.id.toolbar_lo)
         Toolbar toolbar;
-
-        @Bind(R.id.tv_toolbar)
-        TextView tv_toolbar;
-
         @Bind(R.id.ed_login_byphone_account)
         EditText ed_account;
         @Bind(R.id.ed_login_byphone_password)
@@ -40,9 +34,8 @@ public class LoginByAccount extends BaseActivity {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_login_byaccount);
             ButterKnife.bind(this);
-            tv_toolbar.setText("登录");
-            tv_toolbar.setTextColor(Color.WHITE);
-            toolbar.setTitle(" ");
+
+            toolbar.setTitle("用户登录");
             toolbar.inflateMenu(R.menu.base_toolbar_menu);
 
 

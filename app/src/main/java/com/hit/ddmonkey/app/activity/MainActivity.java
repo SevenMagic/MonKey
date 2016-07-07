@@ -256,8 +256,6 @@ public class MainActivity extends BaseActivity {
 
 
 
-
-
     public void initItems(){
 
         SQLiteDatabase monkeyDatabase = monkeyDatabaseHelper.getWritableDatabase();//读入数据库
