@@ -28,7 +28,7 @@ import com.hit.ddmonkey.app.Goal;
 import com.hit.ddmonkey.app.MyRecycleViewAdapter;
 import com.hit.ddmonkey.app.R;
 import com.hit.ddmonkey.app.database.MonkeyDatabaseHelper;
-import com.hit.ddmonkey.app.login.LoginByAccount;
+import com.hit.ddmonkey.app.login.LoginActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -198,7 +198,7 @@ public class MainActivity extends BaseActivity {
         });
 
 
-        /*“三”的标识*/
+        /*侧滑菜单“三”的标识*/
         ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle( this, drawerLayout, toolbar, R.string.openDrawer , R.string.closeDrawer){
             @Override
             public void onDrawerClosed(View drawerView) {
@@ -326,6 +326,7 @@ public class MainActivity extends BaseActivity {
 
     }
 
+    /*退出登录方法*/
     public void logout(){
         final Dialog dialog;
         final CharSequence[] items={"退出当前账号","关闭应用"};
@@ -341,7 +342,7 @@ public class MainActivity extends BaseActivity {
                             //退出登录失败
                             return;
                         }
-                        startActivity(new Intent(MainActivity.this, LoginByAccount.class));
+                        startActivity(new Intent(MainActivity.this, LoginActivity.class));
                         finish();
 
                         break;

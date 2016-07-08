@@ -10,9 +10,7 @@ import android.view.View;
 
 import com.getbase.floatingactionbutton.FloatingActionsMenu;
 
-/**
- * Created by dusz on 2016/3/5 0005.
- */
+
 public class ScrollAwareFAMBehavior extends CoordinatorLayout.Behavior<FloatingActionsMenu> {
 
     private static final android.view.animation.Interpolator INTERPOLATOR=new FastOutSlowInInterpolator();

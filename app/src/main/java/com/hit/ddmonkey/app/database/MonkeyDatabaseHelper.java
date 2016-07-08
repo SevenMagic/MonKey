@@ -5,9 +5,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.widget.Toast;
 
-/**
- * Created by dao on 15-12-21.
- */
+
 public class MonkeyDatabaseHelper extends SQLiteOpenHelper {
     /*建表语句*/
     public static final String CREATE_GOAL = "create table Goal("

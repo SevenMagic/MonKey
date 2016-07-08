@@ -3,7 +3,7 @@
 package com.hit.ddmonkey.app.activity;
 
 
-        import android.database.Cursor;
+import android.database.Cursor;
         import android.database.sqlite.SQLiteDatabase;
         import android.graphics.Color;
         import android.os.Bundle;
@@ -25,9 +25,7 @@ package com.hit.ddmonkey.app.activity;
         import java.util.ArrayList;
         import java.util.List;
 
-/**
- * Created by 道谊戎
- */
+
 public class AnalyzeActivity extends BaseActivity {
 
     private PieGraph pieGraph;
@@ -182,11 +180,6 @@ public class AnalyzeActivity extends BaseActivity {
             viTextView2.setVisibility(View.GONE);
             viLayout3.setVisibility(View.GONE);
         }
-
-
-
-
-
 
 
 

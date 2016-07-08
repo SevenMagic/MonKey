@@ -8,9 +8,7 @@ import android.widget.TextView;
 
 import java.util.List;
 
-/**
- * Created by dusz
- */
+
 public class MyRecycleViewAdapter extends RecyclerView.Adapter<MyRecycleViewAdapter.ViewHolder> {
 
     private List<BillRecord> items;

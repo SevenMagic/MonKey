@@ -2,9 +2,7 @@ package com.hit.ddmonkey.app;
 
 import cn.bmob.v3.BmobUser;
 
-/**
- * Created by 道谊戎
- */
+
 public class DDUser extends BmobUser {
 
     private Boolean sex;

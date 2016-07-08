@@ -1,8 +1,6 @@
 package com.hit.ddmonkey.app;
 
-/**
- * Created by dusz
- */
+
 public class BillRecord {
     private String IO;
     private String category;

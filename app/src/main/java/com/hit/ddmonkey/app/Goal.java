@@ -1,8 +1,6 @@
 package com.hit.ddmonkey.app;
 
-/**
- * Created by dusz
- */
+
 public class Goal {
     private String name;
     private int time;
